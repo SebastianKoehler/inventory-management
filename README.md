@@ -1,8 +1,7 @@
 # Inventory Management Application
-***
 
 ## Description
-***
+
 This application is a simple project to keep track of all incoming/outgoing groceries at home. \
 It will hold its own local sqlite database to manage all your supplies.\
 Default functions will be inserting, updating, searching and removing products. \
@@ -12,7 +11,7 @@ using this application on your smartphone and maybe a barcode scanner mode.
 
 
 ## Installation
-***
+
 ### Virtual environment
 #### Windows
 ```commandline
@@ -36,7 +35,7 @@ using this application on your smartphone and maybe a barcode scanner mode.
     # To deactivate the virtual environment:
     deactivate
 ```
-***
+---
 ### Requirements
 #### Windows
 ```bash
