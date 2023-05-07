@@ -1,3 +1,6 @@
+import datetime
+
+
 class Article:
 
     def __init__(self, name, amount=1, bbd=None, storage_location="Wohnung"):
@@ -18,15 +21,15 @@ class Article:
 
     @property
     def article_amount(self):
-        return self.__name
+        return self.__amount
 
     @property
     def article_bbd(self):
-        return self.__name
+        return self.__bbd
 
     @property
     def article_storage_location(self):
-        return self.__name
+        return self.__storage_location
 
     @article_name.setter
     def article_name(self, value):
@@ -43,3 +46,21 @@ class Article:
     @article_storage_location.setter
     def article_storage_location(self, value):
         self.__storage_location = value
+
+    def __get_difference_between_dates(self):
+
+        actual_date = datetime.date.today()
+        difference = actual_date - self.__bbd
+
+        return difference.days
+
+    def tell_if_product_is_expired(self):
+
+        difference_days = self.__get_difference_between_dates()
+
+        if difference_days == 0:
+            print(f"The product expired today.")
+        elif difference_days > 0:
+            print(f"The product has expired for {difference_days} days.")
+        else:
+            print(f"The product has a shelf life of {abs(difference_days)} days left.")
