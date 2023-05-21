@@ -3,8 +3,7 @@ import datetime
 from logic.article import Article
 
 
-def get_article_name_from_user():
-
+def get_article_name_from_user() -> str:
     while True:
         article_name = input("Pleaser enter the name of the new article: ")
 
@@ -14,8 +13,8 @@ def get_article_name_from_user():
     return article_name
 
 
-def create_article(article_name, amount, bbd_day, bbd_month, bbd_year, storage_location):
-
+def create_article(article_name: str, amount: int | float, bbd_day: int, bbd_month: int, bbd_year: int,
+                   storage_location: str) -> Article | str:
     actual_year = datetime.date.today().year
 
     try:
@@ -57,7 +56,6 @@ def create_article(article_name, amount, bbd_day, bbd_month, bbd_year, storage_l
 
 
 if __name__ == "__main__":
-
     object_properties_1 = {"article_name": "Thunfisch",
                            "amount": 3,
                            "bbd_day": 6,
